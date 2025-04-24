@@ -1,28 +1,116 @@
-<div class="container">
-    <header>
-        <h1>Log in or create account</h1>
-    </header>
-    <main>
-        <section class="stock-info">
-            <h2>AAPL</h2>
-            <div class="chart-container">
-             
-            </div>
-            <div class="stats">
-                
-            </div>
-        </section>
-        <section class="news">
-            <h2>News</h2>
-            
-        </section>
-        <section class="financials">
-            <h2>Financials</h2>
-            
-        </section>
-        <section class="forecast">
-            <h2>Forecast</h2>
-            
-        </section>
-    </main>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Optionally pull in a modern font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <aside class="sidebar">
+    <!-- add nav items if needed -->
+  </aside>
+
+  <main class="dashboard">
+
+    <!-- ── HEADER ─────────────────────────────── -->
+    <section class="header card">
+      <div class="asset-info">
+        <img class="asset-logo" src="logo.svg" alt="Company logo">
+        <div>
+          <h1>Q4 Holdings <span class="ticker">(QFOR)</span></h1>
+          <p class="subtitle">NASDAQ • Technology • Real‑time data</p>
+        </div>
+      </div>
+      <div class="price-block">
+        <h2>$ 132.45</h2>
+        <p class="price-change up">+3.27 (2.54%)</p>
+      </div>
+      <canvas id="spark" class="sparkline"></canvas>
+    </section>
+
+    <!-- ── KPI CARDS ──────────────────────────── -->
+    <section class="kpi-grid">
+      <article class="kpi card">
+        <h3>Market Cap</h3><p>$ 64.2 B</p>
+      </article>
+      <article class="kpi card">
+        <h3>P/E Ratio</h3><p>23.8</p>
+      </article>
+      <article class="kpi card">
+        <h3>Dividend Yield</h3><p>1.7 %</p>
+      </article>
+      <article class="kpi card">
+        <h3>52‑Week Range</h3><p>$ 82.50 – 134.90</p>
+      </article>
+    </section>
+
+    <!-- ── NEWS LIST ──────────────────────────── -->
+    <section class="news card">
+      <h2 class="section-title">Latest News</h2>
+      <ul>
+        <li><a href="#">Q4 Holdings beats earnings expectations, raises guidance</a></li>
+        <li><a href="#">Analysts reiterate “Buy” after product launch</a></li>
+        <li><a href="#">CEO talks AI strategy on CNBC interview</a></li>
+      </ul>
+    </section>
+
+    <!-- ── FUNDAMENTALS & REVENUE CHARTS ──────── -->
+    <section class="grid‑two">
+      <div class="card">
+        <h2 class="section-title">Quarterly Financials</h2>
+        <canvas id="bar-financials" class="chart"></canvas>
+      </div>
+      <div class="card">
+        <h2 class="section-title">Revenue by Segment</h2>
+        <canvas id="stacked-revenue" class="chart"></canvas>
+      </div>
+    </section>
+
+    <!-- ── PRICE & MOVING AVG ─────────────────── -->
+    <section class="card">
+      <h2 class="section-title">Price vs Moving Average</h2>
+      <canvas id="line-price" class="chart tall"></canvas>
+    </section>
+
+    <!-- ── CANDLESTICK ────────────────────────── -->
+    <section class="card">
+      <h2 class="section-title">Intraday Candlesticks</h2>
+      <canvas id="candles" class="chart tall"></canvas>
+    </section>
+
+    <!-- ── VOLUME TRACK ───────────────────────── -->
+    <section class="card">
+      <h2 class="section-title">Volume Trend</h2>
+      <canvas id="volume-track" class="chart tall"></canvas>
+    </section>
+
+    <!-- ── PEERS COMPARISON TABLE ─────────────── -->
+    <section class="card">
+      <h2 class="section-title">Peers Comparison</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Ticker</th><th>Price</th><th>P/E</th><th>EPS</th><th>Market Cap</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>MSFT</td><td>$410.22</td><td>35.1</td><td>8.21</td><td>$3.0 T</td></tr>
+            <tr><td>ADBE</td><td>$602.11</td><td>29.9</td><td>13.55</td><td>$276 B</td></tr>
+            <tr><td>CRM</td><td>$273.18</td><td>45.6</td><td>6.00</td><td>$265 B</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ── FOOTER NOTE ────────────────────────── -->
+    <footer class="card disclaimer">
+      <p>Data is for educational and informational purposes only. Not investment advice.</p>
+    </footer>
+
+  </main>
+</body>
+</html>
